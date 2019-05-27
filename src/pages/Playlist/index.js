@@ -1,22 +1,25 @@
-import React from "react";
-import { Container, Header, SongList, SongItem } from "./styles";
-import PlusIcon from "../../assets/images/plus.svg";
-import ClockIcon from "../../assets/images/clock.svg";
+import React from 'react';
+
+import { Container, Header, SongList } from './styles';
+
+import PlusIcon from '../../assets/images/plus.svg';
+import ClockIcon from '../../assets/images/clock.svg';
+
 const Playlist = () => (
   <Container>
     <Header>
-      <img
-        src="https://is1-ssl.mzstatic.com/image/thumb/Music/8f/11/e6/mzi.csprjcdj.jpg/600x600bf.jpg"
-        alt="Playlist"
-      />
+      <img src="https://s3-sa-east-1.amazonaws.com/gonative/linkin_park.jpg" alt="Linkin Park" />
+
       <div>
         <span>PLAYLIST</span>
         <h1>Rock Forever</h1>
         <p>13 músicas</p>
+
         <button>PLAY</button>
       </div>
     </Header>
-    <SongList>
+
+    <SongList cellPadding={0} cellSpacing={0}>
       <thead>
         <th />
         <th>Título</th>
@@ -26,19 +29,89 @@ const Playlist = () => (
           <img src={ClockIcon} alt="Duração" />
         </th>
       </thead>
+
       <tbody>
         <tr>
-          <td colSpan={5}>Nenhuma música cadastrada</td>
-        </tr>
-        <SongItem>
           <td>
             <img src={PlusIcon} alt="Adicionar à playlist" />
           </td>
-          <td>asdasd</td>
-          <td>asdasd</td>
-          <td>asdsd</td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
           <td>3:26</td>
-        </SongItem>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
+        <tr>
+          <td>
+            <img src={PlusIcon} alt="Adicionar à playlist" />
+          </td>
+          <td>Papercut</td>
+          <td>Linkin Park</td>
+          <td>Hybrid Theory</td>
+          <td>3:26</td>
+        </tr>
       </tbody>
     </SongList>
   </Container>

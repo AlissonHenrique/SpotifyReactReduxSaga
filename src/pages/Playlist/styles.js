@@ -1,39 +1,33 @@
-import styled, { css } from "styled-components";
-
-//import { Spinner } from "../../components/Loading/styles";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 30px;
-
-  ${props =>
-    props.loading &&
-    css`
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `};
 `;
 
 export const Header = styled.header`
   color: #fff;
   display: flex;
   align-items: flex-end;
+
   img {
     width: 220px;
     height: 220px;
   }
+
   div {
     margin-left: 20px;
+
     span {
       font-size: 11px;
       color: #fff;
       letter-spacing: 1.11px;
     }
+
     h1 {
       margin-top: 10px;
       font-size: 48px;
     }
+
     p {
       margin-top: 0;
       color: #b3b3b3;
@@ -41,6 +35,7 @@ export const Header = styled.header`
       letter-spacing: 1.11px;
       text-transform: uppercase;
     }
+
     button {
       background: #1db854;
       height: 32px;
@@ -61,6 +56,7 @@ export const SongList = styled.table`
   color: #fff;
   text-align: left;
   margin-top: 20px;
+
   thead th {
     font-size: 11px;
     color: #b3b3b3;
@@ -68,29 +64,29 @@ export const SongList = styled.table`
     font-weight: normal;
     text-transform: uppercase;
     padding: 5px 10px;
+
     &:last-child {
       text-align: right;
     }
   }
-`;
 
-export const SongItem = styled.tr`
-  td {
+  tbody td {
     border-top: 1px solid #282828;
     font-size: 13px;
     padding: 0 10px;
     line-height: 40px;
+
     &:first-child {
       width: 80px;
       text-align: right;
     }
+
     &:last-child {
       text-align: right;
     }
   }
-  background: ${props => (props.selected ? "#282828" : "transparent")};
-  color: ${props => (props.playing ? "#1ED760" : "#FFF")}
-  &:hover td {
+
+  tbody tr:hover td {
     background: #282828;
   }
 `;

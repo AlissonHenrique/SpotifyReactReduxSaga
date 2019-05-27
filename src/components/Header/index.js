@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Search, User } from "./styles";
+import { Container, Search, User } from './styles';
 
 const Header = () => (
   <Container>
@@ -9,10 +9,7 @@ const Header = () => (
     </Search>
 
     <User>
-      <img
-        src="https://avatars0.githubusercontent.com/u/17318431?v=4"
-        alt="Avatar"
-      />
+      <img src="https://avatars0.githubusercontent.com/u/17318431?v=4" alt="Alisson Henrique" />
       Alisson Henrique
     </User>
   </Container>

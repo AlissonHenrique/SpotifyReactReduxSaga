@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   height: 100%;
@@ -21,5 +21,4 @@ export const Content = styled.section`
   background-repeat: no-repeat;
   background-position: top;
   padding: 0 21px;
-  padding: 0 20px;
 `;

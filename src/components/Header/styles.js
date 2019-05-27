@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import SearchIcon from "../../assets/images/search.svg";
+import SearchIcon from '../../assets/images/search.svg';
 
 export const Container = styled.header`
   display: flex;
@@ -18,11 +18,13 @@ export const Search = styled.div`
   width: 175px;
   padding: 6px 7px 6px 26px;
   background: #fff url(${SearchIcon}) no-repeat 7px center;
+
   input {
     flex: 1;
     font-size: 13px;
     color: #121212;
     border: 0;
+
     &::-webkit-input-placeholder,
     &::-moz-placeholder,
     &:-ms-input-placeholder,
@@ -38,6 +40,7 @@ export const User = styled.div`
   align-items: center;
   font-size: 13px;
   color: #fff;
+
   img {
     border-radius: 50%;
     width: 27px;

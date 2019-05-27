@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Switch, Route } from "react-router-dom";
-import Browse from "../pages/browse";
-import Playlist from "../pages/Playlist";
+import { Switch, Route } from 'react-router-dom';
+
+import Browse from '../pages/browse';
+import Playlist from '../pages/Playlist';
+
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Browse} />

@@ -1,5 +1,14 @@
-import { Reactotron } from "reactotron-react-js";
+import Reactotron from 'reactotron-react-js';
+import { reactotronRedux } from 'reactotron-redux';
+import sagaPlugin from 'reactotron-redux-saga';
 
-import { reactotronRedux } from "reactotron-redux";
+if (process.env.NODE_ENV === 'development') {
+  const tron = Reactotron.configure()
+    .use(reactotronRedux())
+    .use(sagaPlugin())
+    .connect();
 
-import sagaPlugin from "reactotron-redux-saga";
+  tron.clear();
+
+  console.tron = tron;
+}

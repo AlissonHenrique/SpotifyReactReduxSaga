@@ -1,6 +1,8 @@
-import React from "react";
-import { Container, NewPlaylist, Nav } from "./styles";
-import AddPlaylistIcon from "../../assets/images/add_playlist.svg";
+import React from 'react';
+
+import { Container, Nav, NewPlaylist } from './styles';
+
+import AddPlaylist from '../../assets/images/add_playlist.svg';
 
 const Sidebar = () => (
   <Container>
@@ -10,30 +12,34 @@ const Sidebar = () => (
           <a href="">Navegar</a>
         </li>
         <li>
-          <a href="">Radio</a>
+          <a href="">Rádio</a>
         </li>
       </Nav>
+
       <Nav>
         <li>
-          <span>SUA BIBLITECA</span>
-        </li>
-        <li>
-          <a href="">Tocadas recentemente</a>
+          <span>SUA BIBLIOTECA</span>
         </li>
         <li>
           <a href="">Seu Daily Mix</a>
         </li>
         <li>
+          <a href="">Tocados recentemente</a>
+        </li>
+        <li>
           <a href="">Músicas</a>
         </li>
         <li>
-          <a href="">Albuns</a>
+          <a href="">Álbums</a>
         </li>
         <li>
-          <a href="">Artista</a>
+          <a href="">Artistas</a>
         </li>
         <li>
-          <a href="">Arquivos Locais</a>
+          <a href="">Estações</a>
+        </li>
+        <li>
+          <a href="">Arquivos locais</a>
         </li>
         <li>
           <a href="">Vídeos</a>
@@ -42,19 +48,22 @@ const Sidebar = () => (
           <a href="">Podcasts</a>
         </li>
       </Nav>
+
       <Nav>
         <li>
-          <span>PLAYLIST</span>
+          <span>Playlists</span>
         </li>
         <li>
           <a href="">Melhores do Rock</a>
         </li>
       </Nav>
     </div>
+
     <NewPlaylist>
-      <img src={AddPlaylistIcon} alt="Adicionarplaylist" />
-      Nova Playlist
+      <img src={AddPlaylist} alt="Nova playlist" />
+      Nova playlist
     </NewPlaylist>
   </Container>
 );
+
 export default Sidebar;

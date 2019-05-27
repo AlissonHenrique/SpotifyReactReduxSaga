@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import {} from "rc-slider";
+import {} from 'rc-slider';
 
 export const Container = styled.div`
   height: 72px;
