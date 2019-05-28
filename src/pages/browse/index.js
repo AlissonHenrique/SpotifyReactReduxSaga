@@ -1,49 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { Creators as PlaylistsActions } from '../../store/ducks/playlists';
+
+import Loading from '../../components/Loading';
 
 import { Container, Title, List, PlayList } from './styles';
 
-const Browse = () => (
-  <Container>
-    <Title>Navegar</Title>
+class Browse extends Component {
+  static propTypes = {
+    getPlaylistsRequest: PropTypes.func.isRequired,
+    playlists: PropTypes.shape({
+      data: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number,
+        title: PropTypes.string,
+        thumbnail: PropTypes.string,
+        description: PropTypes.string,
+      })),
+      loading: PropTypes.bool,
+    }).isRequired,
+  };
 
-    <List>
-      <PlayList to="playlists/1">
-        <img
-          src="https://marketplace.canva.com/MAB6qmZ_0fc/1/0/thumbnail_large/canva-minimal-music-album-cover-MAB6qmZ_0fc.jpg"
-          alt="Greatest Hits"
-        />
-        <strong>Rock dos bons</strong>
-        <p>Relaxe enquanto programa ouvindo apenas as melhores do rock mundial!</p>
-      </PlayList>
+  componentDidMount() {
+    this.props.getPlaylistsRequest();
+  }
 
-      <PlayList to="playlists/1">
-        <img
-          src="https://marketplace.canva.com/MAB6qNBAV-0/1/0/thumbnail_large/canva-in-too-deep-diving-music-album-cover-MAB6qNBAV-0.jpg"
-          alt="Greatest Hits"
-        />
-        <strong>Rock dos bons</strong>
-        <p>Relaxe enquanto programa ouvindo apenas as melhores do rock mundial!</p>
-      </PlayList>
+  render() {
+    return (
+      <Container>
+        <Title>Navegar {this.props.playlists.loading && <Loading />}</Title>
 
-      <PlayList to="playlists/1">
-        <img
-          src="https://marketplace.canva.com/MACF-O76mPY/1/0/thumbnail_large/canva--sunset-indie-album-cover-MACF-O76mPY.jpg"
-          alt="Greatest Hits"
-        />
-        <strong>Rock dos bons</strong>
-        <p>Relaxe enquanto programa ouvindo apenas as melhores do rock mundial!</p>
-      </PlayList>
+        <List>
+          {this.props.playlists.data.map(playlist => (
+            <PlayList key={playlist.id} to={`/playlists/${playlist.id}`}>
+              <img src={playlist.thumbnail} alt={playlist.title} />
+              <strong>{playlist.title}</strong>
+              <p>{playlist.description}</p>
+            </PlayList>
+          ))}
+        </List>
+      </Container>
+    );
+  }
+}
 
-      <PlayList to="playlists/1">
-        <img
-          src="http://www.coupdemainmagazine.com/sites/default/files/styles/full_width/public/article/12442/hero-12442-543045218.jpg?itok=KpMSgg9Y"
-          alt="Greatest Hits"
-        />
-        <strong>Rock dos bons</strong>
-        <p>Relaxe enquanto programa ouvindo apenas as melhores do rock mundial!</p>
-      </PlayList>
-    </List>
-  </Container>
-);
+const mapStateToProps = state => ({
+  playlists: state.playlists,
+});
 
-export default Browse;
+const mapDispatchToProps = dispatch => bindActionCreators(PlaylistsActions, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Browse);

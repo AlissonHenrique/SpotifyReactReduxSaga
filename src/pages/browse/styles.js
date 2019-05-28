@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
+import { Spinner } from '../../components/Loading/styles';
 
 export const Container = styled.div`
   margin-top: 110px;
@@ -9,6 +10,9 @@ export const Container = styled.div`
 export const Title = styled.h1`
   font-size: 48px;
   color: #fff;
+  ${Spinner} {
+    height: 24px;
+  }
 `;
 
 export const List = styled.div`
@@ -23,24 +27,19 @@ export const PlayList = styled(Link)`
   margin-left: 20px;
   width: 250px;
   text-decoration: none;
-
   &:hover img {
     opacity: 0.4;
   }
-
   &:first-child {
     margin: 0;
   }
-
   img {
     height: 250px;
   }
-
   strong {
     font-size: 13px;
     margin-top: 10px;
   }
-
   p {
     line-height: 22px;
     margin-top: 5px;
